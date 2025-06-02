@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Laman Selin ✨</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #74ebd5, #4facfe);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: #fff;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    button {
+      padding: 14px 28px;
+      font-size: 16px;
+      background-color: #ffffff;
+      color: #2980b9;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: all 0.25s ease;
+    }
+
+    button:hover {
+      transform: scale(1.08);
+      background-color: #e6f0ff;
+    }
+
+    .desc {
+      font-size: 18px;
+      margin-top: 30px;
+      max-width: 600px;
+      line-height: 1.6;
+      display: none;
+      opacity: 0;
+      transition: all 0.7s ease;
+    }
+
+    .desc.show {
+      display: block;
+      opacity: 1;
+    }
+
+    .table-container {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+      margin-top: 20px;
+      display: none;
+    }
+
+    .table-container.show {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    table {
+      background-color: rgba(255, 255, 255, 0.15);
+      border-collapse: collapse;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      backdrop-filter: blur(10px);
+    }
+
+    td, th {
+      padding: 16px 28px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      color: #fff;
+    }
+
+    th {
+      background-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .credit {
+      position: absolute;
+      bottom: 20px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+  </style>
+</head>
+<body>
+
+  <button onclick="showInfo()">✨ Lihat Rahasia Selin ✨</button>
+
+  <div class="desc" id="desc">
+    Haii! 👋 Aku Selin. Katanya ini laman iseng, tapi harus tetep kece dong. Nih beberapa hal favoritku, siapa tau kita punya kesamaan 😜
+  </div>
+
+  <div class="table-container" id="dataTable">
+    <table>
+      <tr>
+        <th>🍽️ Kategori</th>
+        <th>✨ Favorit Selin</th>
+      </tr>
+      <tr>
+        <td>Makanan</td>
+        <td>Mie Ayam 🍜</td>
+      </tr>
+      <tr>
+        <td>Minuman</td>
+        <td>Air Putih Dingin ❄️💧</td>
+      </tr>
+      <tr>
+        <td>Film</td>
+        <td>Pokémon Horizons x Journeys 🎥🧢</td>
+      </tr>
+      <tr>
+        <td>Hobi</td>
+        <td>Masak 👩‍🍳🔥</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="credit">dibuat dengan iseng oleh temen lu 😎</div>
+
+  <script>
+    function showInfo() {
+      const desc = document.getElementById("desc");
+      const table = document.getElementById("dataTable");
+
+      desc.classList.add("show");
+      setTimeout(() => {
+        table.classList.add("show");
+      }, 700);
+    }
+  </script>
+
+</body>
+</html>
