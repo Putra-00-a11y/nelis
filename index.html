@@ -2,143 +2,153 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Laman Selin ✨</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Favorit Selin Input Bebas</title>
   <style>
     body {
-      margin: 0;
-      padding: 5px;
-      font-family: 'Segoe UI', sans-serif;
+      margin: 0; 
+      padding: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #74ebd5, #4facfe);
-      height: 100vh;
+      color: #fff;
+      min-height: 100vh;
       display: flex;
-      justify-content: center;
-      align-items: center;
       flex-direction: column;
-      color: #fff;
-      overflow: hidden;
-      text-align: center;
+      align-items: center;
+      user-select: none;
     }
-
-    button {
-      padding: 14px 28px;
-      font-size: 16px;
-      background-color: #ffffff;
-      color: #2980b9;
-      border: none;
+    h1 {
+      margin-bottom: 10px;
+    }
+    form {
+      background: rgba(255,255,255,0.15);
+      padding: 20px;
       border-radius: 12px;
-      cursor: pointer;
-      font-weight: bold;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      transition: all 0.25s ease;
-    }
-
-    button:hover {
-      transform: scale(1.08);
-      background-color: #e6f0ff;
-    }
-
-    .desc {
-      font-size: 18px;
-      margin-top: 30px;
-      max-width: 600px;
-      line-height: 1.6;
-      display: none;
-      opacity: 0;
-      transition: all 0.7s ease;
-    }
-
-    .desc.show {
-      display: block;
-      opacity: 1;
-    }
-
-    .table-container {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.8s ease;
-      margin-top: 20px;
-      display: none;
-    }
-
-    .table-container.show {
-      display: block;
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    table {
-      background-color: rgba(255, 255, 255, 0.15);
-      border-collapse: collapse;
-      border-radius: 14px;
-      overflow: hidden;
       box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-      backdrop-filter: blur(10px);
+      width: 320px;
+      margin-bottom: 30px;
     }
-
-    td, th {
-      padding: 16px 28px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    label {
+      display: block;
+      margin-top: 12px;
+      font-weight: 600;
+      font-size: 16px;
+    }
+    input[type="text"] {
+      width: 93%;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      margin-top: 6px;
+      font-size: 16px;
+      color: #2980b9;
+      font-weight: 600;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      font-weight: 700;
+      font-size: 18px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      background: #2980b9;
+      color: #fff;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background: #1e5d8a;
+    }
+    table {
+      border-collapse: collapse;
+      width: 320px;
+      background: rgba(255,255,255,0.15);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      border-radius: 12px;
+      overflow: hidden;
       color: #fff;
     }
-
-    th {
-      background-color: rgba(255, 255, 255, 0.25);
+    th, td {
+      padding: 12px 15px;
+      border-bottom: 1px solid rgba(255,255,255,0.25);
+      text-align: left;
+      font-weight: 600;
+      font-size: 16px;
     }
-
-    .credit {
-      position: absolute;
-      bottom: 20px;
-      font-size: 12px;
-      color: rgba(255, 255, 255, 0.6);
+    th {
+      background: rgba(255,255,255,0.25);
+      font-size: 18px;
+    }
+    td:last-child {
+      font-style: italic;
+      color: #cceeff;
     }
   </style>
 </head>
 <body>
 
-  <button onclick="showInfo()">✨ Lihat Rahasia Selin ✨</button>
+  <h1>Favorit Selin</h1>
 
-  <div class="desc" id="desc">
-    Haii! 👋 Aku Selin. Nih beberapa hal favoritku, siapa tau kita punya kesamaan 😜
-  </div>
+  <form id="favForm" aria-label="Form input favorit Selin">
+    <label for="makanan">Makanan Favorit</label>
+    <input type="text" id="makanan" name="makanan" placeholder="Contoh: Mie Ayam" required />
 
-  <div class="table-container" id="dataTable">
-    <table>
-      <tr>
-        <th>🍽️ Kategori</th>
-        <th>✨ Favorit Selin</th>
-      </tr>
-      <tr>
-        <td>Makanan</td>
-        <td>Mie Ayam 🍜</td>
-      </tr>
-      <tr>
-        <td>Minuman</td>
-        <td>Air Putih Dingin ❄️💧</td>
-      </tr>
-      <tr>
-        <td>Film</td>
-        <td>Pokémon Horizons x Journeys 🎥🧢</td>
-      </tr>
-      <tr>
-        <td>Hobi</td>
-        <td>Masak 👩‍🍳🔥</td>
-      </tr>
-    </table>
-  </div>
+    <label for="minuman">Minuman Favorit</label>
+    <input type="text" id="minuman" name="minuman" placeholder="Contoh: Air Putih Dingin" required />
 
-  <div class="credit">dibuat dengan abg syiputt 😎</div>
+    <label for="film">Film Favorit</label>
+    <input type="text" id="film" name="film" placeholder="Contoh: Pokémon Horizons x Journeys" required />
+
+    <label for="hobi">Hobi</label>
+    <input type="text" id="hobi" name="hobi" placeholder="Contoh: Masak" required />
+
+    <button type="submit">Tampilkan Favorit</button>
+  </form>
+
+  <table id="favTable" aria-label="Tabel favorit Selin" hidden>
+    <thead>
+      <tr>
+        <th>Kategori</th>
+        <th>Favorit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Isi dinamis -->
+    </tbody>
+  </table>
 
   <script>
-    function showInfo() {
-      const desc = document.getElementById("desc");
-      const table = document.getElementById("dataTable");
+    const form = document.getElementById('favForm');
+    const table = document.getElementById('favTable');
+    const tbody = table.querySelector('tbody');
 
-      desc.classList.add("show");
-      setTimeout(() => {
-        table.classList.add("show");
-      }, 700);
-    }
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const data = {
+        Makanan: form.makanan.value.trim(),
+        Minuman: form.minuman.value.trim(),
+        Film: form.film.value.trim(),
+        Hobi: form.hobi.value.trim(),
+      };
+
+      // Bersihin isi tabel dulu
+      tbody.innerHTML = '';
+
+      for (const kategori in data) {
+        const tr = document.createElement('tr');
+        const tdKategori = document.createElement('td');
+        tdKategori.textContent = kategori;
+        const tdFavorit = document.createElement('td');
+        tdFavorit.textContent = data[kategori];
+        tr.appendChild(tdKategori);
+        tr.appendChild(tdFavorit);
+        tbody.appendChild(tr);
+      }
+
+      table.hidden = false;
+    });
   </script>
 
 </body>
